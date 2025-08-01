@@ -21,14 +21,16 @@ Fortune f = (Fortune) request.getAttribute("fortune");
 
 <!-- ここでfortuneの中身を取り出す -->
 
-<p style="color:<%= ((Fortune)request.getAttribute("fortune")).getColor() %>;">
-    今日の運勢は <strong><%= ((Fortune)request.getAttribute("fortune")).getResult() %></strong> です！<br>
-    <%= ((Fortune)request.getAttribute("fortune")).getMessage() %>
+<p style="color:<%= f.getColor() %>;">
+    今日の運勢は <strong><%= f.getResult() %></strong> です！<br>
+    <%= f.getMessage() %>
 </p>
 
 
 <br>
-<p>	もう一度占う</p>
+<p><h2>	もう一度占う</h2></p>
+
+<!-- 再度占う用のリンク -->
 <form action="./FortuneAction" method="post">
 		<button type="submit" name="type" value="love">恋愛運</button>
 		<button type="submit" name="type" value="work">仕事運</button>
